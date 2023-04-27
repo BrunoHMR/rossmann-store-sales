@@ -25,7 +25,7 @@ Ferramentas utilizadas:
 
 ## 2. Descrição dos dados
 
-Atributos de treino das lojas:
+Atributos das lojas:
 - 'Store': código da loja,
 - 'StoreType': tipo da loja,
 - 'Assortment': sortimento (básico, extra ou extendido),
@@ -37,7 +37,7 @@ Atributos de treino das lojas:
 - 'Promo2SinceYear': tempo, em anos, desde que a loja esta em promoção extendida,
 - 'PromoInterval': meses de intervalo da promoção.
 
-Atributos de treino das vendas:
+Atributos das vendas:
 - 'Store': código da loja,
 - 'DayOfWeek': dia da semana em que ocorreu a venda,
 - 'Date': data da venda,
