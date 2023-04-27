@@ -140,6 +140,12 @@ Após o treinamento dos modelos foi escolhido seguir com o XGBoost Regressor. A 
 
 Para a tunagem dos hiperparâmetros foi escolhida a técnica de Random Search, a qual é mais performática que a Grid Search, pois realiza apenas uma quantidade limitada de interações com base nas possibilidades de parâmetros definidas como base, enquanto a Grid Search utiliza todos os valores possíveis, levando muito tempo para ser finalizada.
 
+Após aplicar a Random Search, foi realizado novamente o treino do modelo usando o Cross-Validation, desta vez com os melhores parâmetros adquiridos pela tunagem. Em seguida, foi realizada a concatenação entre os dados de treino e validação para um último retreino do modelo, onde as previsões foram realizadas sobre os dados separados para teste (dados nunca vistos antes pelo modelo). Após o treino final, foram obtidos os erros:
+- MAE: 650,69,
+- MAPE: 9,38%,
+- RMSE: 949,66.
+
+## 9. Tradução do erro
 
 
 
