@@ -53,13 +53,13 @@ Atributos das vendas:
 Variável resposta:
 - 'Sales': quantidade de vendas da loja.
 
-Tratativa de NaNs:
-- competition_distance: se o valor for NA, substituir por um valor muito alto, pois se é NA significa que não tem competidor próximo ou a distância é muito grande.
-- competition_open_since_month/year: se o valor for NA, substituir pelo mês/ano referente à coluna 'date'.
-- promo2_since_week/year: se o valor for NA, substituir pela semana/ano referente à coluna 'date'.
-- promo_interval: se o valor for NA, substituir por 0.
-
 ## 3. Engenharia de atributos
+
+Tratativa de linhas com valores nulos:
+- competition_distance: substituir nulos por um valor muito alto, pois significa que não tem competidor próximo ou a distância é muito grande.
+- competition_open_since_month/year: substituir nulos pelo mês/ano referente à coluna 'date'.
+- promo2_since_week/year: substituir nulos pela semana/ano referente à coluna 'date'.
+- promo_interval: substituir nulos por 0.
 
 Premissas:
 - As linhas com a variável 'open' = 0 foram eliminadas, visto que indicam que a loja em questão está fechada,
@@ -102,6 +102,10 @@ Principais considerações:
 - Na hipótese 8, como ainda não acabou o ano em 2015, obviamente as vendas são menores ao longo dos anos.
 - Na hipótese 11, lojas vendem menos nos finais de semana, porém a proporção de vendas no domingo é a maior entre todos os dias da semana.
 
+Demais análises:
+- No relatório 'SWEETVIZ_REPORT.html' há uma análise completa de cada atributo em relação à variável resposta.
+- Para mais detalhes da análise estatística de cada hipótese, checar o arquivo 'rossmann_complete_v0.ipynb'
+
 ## 5. Preparação dos dados
 
 - Nas variáveis numéricas não cíclicas foi aplicada a técnica de rescala (MinMax Scaler e Robust Scaler).
@@ -134,7 +138,7 @@ Para os demais modelos foi aplicada a técnica de Cross-Validation. Para aplicar
 ![ts_cv](https://user-images.githubusercontent.com/108444459/234761672-96d908bb-e70e-49e1-b0a9-e86508ab3462.png)
 fonte: https://towardsdatascience.com/4-things-to-do-when-applying-cross-validation-with-time-series-c6a5674ebf3a
 
-Após o treinamento dos modelos foi escolhido seguir com o XGBoost Regressor. A diferença percentual entre o erro MAE do XGBoost e da Random Forest foi de aproximadamente 2% em favor da Random Forest. Porém, por ser treinado de maneira muito mais rápida e apresentar melhores resultados após a tunagem, foi escolhido seguir com o XGBoost.
+Após o treinamento dos modelos foi escolhido seguir com o XGBoost Regressor. A diferença percentual entre o erro MAE do XGBoost e da Random Forest foi de aproximadamente 2% em favor da Random Forest. Porém, por ser treinado de maneira muito mais rápida e apresentar melhores resultados após a tunagem foi escolhido seguir com o XGBoost.
 
 ## 8. Tunagem dos hiperparâmetros
 
