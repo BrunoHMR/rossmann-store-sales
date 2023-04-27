@@ -7,7 +7,7 @@ from flask import Flask, request, Response
 TOKEN = '5842040270:AAGindvmaVE8pziWw-XSvGRWO1qxZBJKcbE'
 
 # Set Webhook
-# https://api.telegram.org/bot5842040270:AAGindvmaVE8pziWw-XSvGRWO1qxZBJKcbE/setWebhook?url=https://rossmmann-bot.onrender.com
+# https://api.telegram.org/bot5842040270:AAGindvmaVE8pziWw-XSvGRWO1qxZBJKcbE/setWebhook?url=https://rossmmann-bot-22.onrender.com/rossmann/predict
 
 # Delete Webhook
 # https://api.telegram.org/bot5842040270:AAGindvmaVE8pziWw-XSvGRWO1qxZBJKcbE/deleteWebhook
@@ -47,7 +47,7 @@ def load_dataset(store_id):
 def predict (data):
 
     # API CALL
-    url = 'https://rossmann-api.onrender.com/rossmann/predict'
+    url = 'https://rossmann-api-5z78.onrender.com/rossmann/predict'
     header = {'Content-type':'application/json'}
     data = data
 
