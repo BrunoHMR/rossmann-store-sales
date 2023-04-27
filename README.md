@@ -123,9 +123,9 @@ A escolha dos modelos foi realizada pensando na característica do problema, ou 
 - Random Forest Regressor,
 - XGBoost Regressor.
 
-A escolha dos erros foi baseada tanto na avaliação do ponto de vista de negócio quanto do ponto de vista da modelagem de Machine Learning. Deste modo, foram definidas as seguintes opções de erros:
-- Mean Absolute Error (MAE): indica o quanto as previsões erram, em valor absoluto, em relação a média de venda de todas as lojas.
-- Mean Average Percentage Error (MAPE): indica o quanto as previsões erram, em valor percentual, em relação a média de venda de todas as lojas.
+A escolha das métricas de avaliação foi baseada tanto na avaliação do ponto de vista de negócio quanto do ponto de vista da modelagem de Machine Learning. Deste modo, foram definidas as seguintes opções:
+- Mean Absolute Error (MAE): média do somatório da diferença absoluta entre o valor previsto e o valor real de cada venda de uma determinada loja.
+- Mean Absolute Percentage Error (MAPE): média do somatório dos erros absolutos percentuais de cada venda de uma determinada loja.
 - Root Mean Squared Error (RMSE): mais robusto contra outliers, pois o erro é dado pela raíz quadrada do quadrado da diferença entre o valor real e o valor predito.
 
 Foi definido como baseline a média de vendas entre as lojas (Average Model), o qual apresentou um erro MAE de 45%.
@@ -147,6 +147,24 @@ Após aplicar a Random Search, foi realizado novamente o treino do modelo usando
 
 ## 9. Tradução do erro
 
+Para avaliar o desempenho final do modelo do ponto de vista de negócio foram analisadas as métricas MAE e MAPE para cada loja. Também foram traçadaos os melhores e os piores cenários das previsões para ajudar a equipe de negócio a decidir se irá alocar uma maior ou uma menor quantidade de recursos naquela loja. Como resultado, foram ordenadas as lojas com os maiores erros percentuais médios absolutos, as quais identificam que nestes casos o modelo não consegue prever o fenômeno de maneira adequada:
+
+![performance_negocio](https://user-images.githubusercontent.com/108444459/234919477-038316f1-fe61-42d6-a138-b4ec1ff04380.PNG)
+
+Do ponto de vista financeiro do negócio foram somadas as previsões de vendas de todas as lojas, onde foi obtido um valor geral de R$282.464.896,00. No pior cenário imaginado pelo modelo, as lojas venderiam um total de R$281.735.449,30 e no melhor cenário, um total de R$283.194.390,78. Estes valores ajudam a empresa a prever se as metas de vendas para as próximas 6 semanas serão batidas ou não e se estão adequadas ao cenário atual da empresa ou não.
+
+Do ponto de vista da modelagem foram traçados 4 gráficos para análise de desempenho, conforme mostra a figura abaixo. O gráfico do canto superior esquerdo indica a diferença entre os valores previstos e os valores reais de venda das lojas para as próximas 6 semanas. O gráfico do canto superior direito indica se as previsões do modelo estão pessimistas (valores menores que 1) ou otimistas (valores maiores que 1). No canto inferior esquerdo é mostrada a distribuição de erro do modelo, a qual está próxima de uma normal, indicando que o modelo apresenta poucos erros significativos. Por fim, no canto inferior direito são mostrados os erros em função das previsões, sendo que quanto mais os erros estiverem próximos de um formato de tubo horizontal imaginário melhor é a performance do modelo.
+
+![performance_modelo](https://user-images.githubusercontent.com/108444459/234926940-c1422447-f53d-4b1e-91b1-5d7ca6a50c98.PNG)
+
+## 10. Modelo em Produção
+
+Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo.
+
+Como próximos passos, sugere-se:
+- A redução do erro do modelo,
+- A avaliação de novas técnicas de análise mais precisas para as lojas com erros percentuais médios absolutos acima de 25%,
+- O teste de novas hipóteses de negócio, como por exemplo, a hipótese 5 do capítulo 4.
 
 
 
