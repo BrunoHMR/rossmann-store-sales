@@ -15,7 +15,7 @@ Causas:
 
 Solução:
 - Modelo de previsão de vendas utilizando Machine Learning.
-- Bot no telegram contendo as previsões de vendas para cada loja.
+- Bot no telegram contendo as previsões de vendas para cada loja (opção inativa devido às restrições impostas ao Telegram no Brasil).
 
 Fonte do problema:
 - https://www.kaggle.com/c/rossmann-store-sales/overview/description
@@ -163,7 +163,7 @@ Do ponto de vista da modelagem foram traçados 4 gráficos para análise de dese
 
 ## 10. Modelo em Produção
 
-Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo.
+Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo (no momento esta opção encontra-se inativa devido as restrições impostas ao uso do Telegram no Brasil).
 
 Como próximos passos, sugere-se:
 - A redução do erro do modelo,
