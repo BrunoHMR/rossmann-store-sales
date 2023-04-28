@@ -132,7 +132,7 @@ A escolha das métricas de avaliação foi baseada tanto na avaliação do ponto
 - Mean Absolute Percentage Error (MAPE): média do somatório dos erros absolutos percentuais de cada venda de uma determinada loja.
 - Root Mean Squared Error (RMSE): mais robusto contra outliers, pois o erro é dado pela raíz quadrada do quadrado da diferença entre o valor real e o valor predito.
 
-Foi definido como baseline a média de vendas entre as lojas (Average Model), o qual apresentou um erro MAE de 45%.
+Foi definido como baseline um modelo de média das vendas entre as lojas (Average Model), o qual apresentou um erro MAE de 45%.
 
 Para os demais modelos foi aplicada a técnica de Cross-Validation. Para aplicar o Cross-Validation em uma série temporal deve ser separado, para uma primeira interação, um conjunto pequeno para treino com as datas mais antigas e um conjunto para validação com as datas posteriores sequenciais às datas separadas para treino. Na segunda interação, utiliza-se como base de treino todos os dados de treino e validação utilizados na primeira interação e como novo conjunto de validação usa-se as datas posteriores sequenciais às datas separadas para o novo treino. As demais interações seguem a mesma lógica, conforme mostrado na figura abaixo:
 ![ts_cv](https://user-images.githubusercontent.com/108444459/234761672-96d908bb-e70e-49e1-b0a9-e86508ab3462.png)
@@ -163,7 +163,7 @@ Do ponto de vista da modelagem foram traçados 4 gráficos para análise de dese
 
 ## 10. Modelo em Produção
 
-Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo (no momento esta opção encontra-se inativa devido as restrições impostas ao uso do Telegram no Brasil).
+Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo, a qual pode ser testada no arquivo 'api/test_api.ipynb'. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo (no momento esta opção encontra-se inativa devido as restrições impostas ao uso do Telegram no Brasil).
 
 Como próximos passos, sugere-se:
 - A redução do erro do modelo,
