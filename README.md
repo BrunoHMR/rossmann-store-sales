@@ -15,7 +15,7 @@ Causas:
 
 Solução:
 - Modelo de previsão de vendas utilizando Machine Learning.
-- Bot no telegram contendo as previsões de vendas para cada loja (opção inativa devido às restrições impostas ao Telegram no Brasil).
+- Arquivo .csv com as previsões de venda para cada loja.
 
 Fonte do problema:
 - https://www.kaggle.com/c/rossmann-store-sales/overview/description
