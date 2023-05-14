@@ -163,7 +163,7 @@ Do ponto de vista da modelagem foram traçados 4 gráficos para análise de dese
 
 ## 10. Modelo em Produção
 
-Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo, a qual pode ser testada no arquivo 'api/test_api.ipynb'. Também foi desenvolvido um bot no telegram para uso dos stakeholders, o qual pode ser encontrado através de uma simples busca por 'bhmr_rossmann_bot' (RossmannBot) na barra de pesquisa do aplicativo (no momento esta opção encontra-se inativa devido as restrições impostas ao uso do Telegram no Brasil).
+Após a avaliação de performance o modelo foi enviado à produção. Foi desenvolvida uma API para coletar novos dados e traçar avaliações posteriores quanto a usabilidade do modelo, a qual pode ser testada no arquivo 'api/test_api.ipynb'. Também foi gerado um arquivo .csv com as previsões para uso dos stakeholders, o qual pode ser encontrado em 'api/predictions.csv'.
 
 Como próximos passos, sugere-se:
 - A redução do erro do modelo,
